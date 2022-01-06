@@ -763,30 +763,3 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
-
-
-
-function exp_RparationAEP_3rule0_eval_expression(context) {
-    // REPAEFFECT = 'T'
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return (feature.get('REPAEFFECT')  == 'T');
-    } else {
-        return (feature.get('REPAEFFECT')  == 'T');
-    }
-}
-
-
-function exp_RparationAEP_3rule1_eval_expression(context) {
-    // REPAEFFECT = 'F'
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return (feature.get('REPAEFFECT')  == 'F');
-    } else {
-        return (feature.get('REPAEFFECT')  == 'F');
-    }
-}
