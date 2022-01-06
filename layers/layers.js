@@ -15,26 +15,26 @@ var lyr_PlanIGNv2_0 = new ol.layer.Tile({
                             
                           });
               wms_layers.push([lyr_PlanIGNv2_0, 0]);
-var format_test_1 = new ol.format.GeoJSON();
-var features_test_1 = format_test_1.readFeatures(json_test_1, 
+var format_AEP__1 = new ol.format.GeoJSON();
+var features_AEP__1 = format_AEP__1.readFeatures(json_AEP__1, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_test_1 = new ol.source.Vector({
+var jsonSource_AEP__1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_test_1.addFeatures(features_test_1);
-var lyr_test_1 = new ol.layer.Vector({
+jsonSource_AEP__1.addFeatures(features_AEP__1);
+var lyr_AEP__1 = new ol.layer.Vector({
                 declutter: true,
-                source:jsonSource_test_1, 
-                style: style_test_1,
-                interactive: false,
-                title: '<img src="styles/legend/test_1.png" /> test'
+                source:jsonSource_AEP__1, 
+                style: style_AEP__1,
+                interactive: true,
+                title: '<img src="styles/legend/AEP__1.png" /> AEP_'
             });
 
-lyr_PlanIGNv2_0.setVisible(true);lyr_test_1.setVisible(true);
-var layersList = [lyr_PlanIGNv2_0,lyr_test_1];
-lyr_test_1.set('fieldAliases', {'MATERIAU': 'MATERIAU', 'DIAMETRE': 'DIAMETRE', });
-lyr_test_1.set('fieldImages', {'MATERIAU': 'ValueRelation', 'DIAMETRE': 'TextEdit', });
-lyr_test_1.set('fieldLabels', {'MATERIAU': 'no label', 'DIAMETRE': 'no label', });
-lyr_test_1.on('precompose', function(evt) {
+lyr_PlanIGNv2_0.setVisible(true);lyr_AEP__1.setVisible(true);
+var layersList = [lyr_PlanIGNv2_0,lyr_AEP__1];
+lyr_AEP__1.set('fieldAliases', {'DIAMETRE': 'DIAMETRE', 'MAT': 'MAT', });
+lyr_AEP__1.set('fieldImages', {'DIAMETRE': 'TextEdit', 'MAT': 'TextEdit', });
+lyr_AEP__1.set('fieldLabels', {'DIAMETRE': 'no label', 'MAT': 'no label', });
+lyr_AEP__1.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
