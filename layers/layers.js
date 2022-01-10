@@ -32,9 +32,9 @@ var lyr_AEP__1 = new ol.layer.Vector({
 
 lyr_PlanIGNv2_0.setVisible(true);lyr_AEP__1.setVisible(true);
 var layersList = [lyr_PlanIGNv2_0,lyr_AEP__1];
-lyr_AEP__1.set('fieldAliases', {'DIAMETRE': 'DIAMETRE', 'MAT': 'MAT', });
-lyr_AEP__1.set('fieldImages', {'DIAMETRE': 'TextEdit', 'MAT': 'TextEdit', });
-lyr_AEP__1.set('fieldLabels', {'DIAMETRE': 'no label', 'MAT': 'no label', });
+lyr_AEP__1.set('fieldAliases', {'DIAMETRE': 'DIAMETRE', 'MAT': 'MAT', 'ID': 'ID', });
+lyr_AEP__1.set('fieldImages', {'DIAMETRE': 'TextEdit', 'MAT': 'TextEdit', 'ID': 'TextEdit', });
+lyr_AEP__1.set('fieldLabels', {'DIAMETRE': 'no label', 'MAT': 'no label', 'ID': 'inline label', });
 lyr_AEP__1.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
