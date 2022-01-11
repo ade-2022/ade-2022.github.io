@@ -26,15 +26,43 @@ var lyr_AEP__1 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_AEP__1, 
                 style: style_AEP__1,
-                interactive: false,
+                interactive: true,
                 title: '<img src="styles/legend/AEP__1.png" /> AEP_'
             });
+var format_APP__2 = new ol.format.GeoJSON();
+var features_APP__2 = format_APP__2.readFeatures(json_APP__2, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_APP__2 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_APP__2.addFeatures(features_APP__2);
+var lyr_APP__2 = new ol.layer.Vector({
+                declutter: true,
+                source:jsonSource_APP__2, 
+                style: style_APP__2,
+                interactive: true,
+    title: 'APP_<br />\
+    <img src="styles/legend/APP__2_0.png" /> Autre<br />\
+    <img src="styles/legend/APP__2_1.png" /> Cpt<br />\
+    <img src="styles/legend/APP__2_2.png" /> debitM<br />\
+    <img src="styles/legend/APP__2_3.png" /> indeTer<br />\
+    <img src="styles/legend/APP__2_4.png" /> PI<br />\
+    <img src="styles/legend/APP__2_5.png" /> pointdeB<br />\
+    <img src="styles/legend/APP__2_6.png" /> RP<br />\
+    <img src="styles/legend/APP__2_7.png" /> Vanne<br />\
+    <img src="styles/legend/APP__2_8.png" /> Ventouse<br />\
+    <img src="styles/legend/APP__2_9.png" /> Vidange<br />\
+    <img src="styles/legend/APP__2_10.png" /> <br />'
+        });
 
-lyr_PlanIGNv2_0.setVisible(true);lyr_AEP__1.setVisible(true);
-var layersList = [lyr_PlanIGNv2_0,lyr_AEP__1];
+lyr_PlanIGNv2_0.setVisible(true);lyr_AEP__1.setVisible(true);lyr_APP__2.setVisible(true);
+var layersList = [lyr_PlanIGNv2_0,lyr_AEP__1,lyr_APP__2];
 lyr_AEP__1.set('fieldAliases', {'DIAMETRE': 'DIAMETRE', 'MAT': 'MAT', 'ID': 'ID', });
+lyr_APP__2.set('fieldAliases', {'IDAPPAREIL': 'IDAPPAREIL', 'FNAPPAEP': 'FNAPPAEP', });
 lyr_AEP__1.set('fieldImages', {'DIAMETRE': 'TextEdit', 'MAT': 'TextEdit', 'ID': 'TextEdit', });
+lyr_APP__2.set('fieldImages', {'IDAPPAREIL': 'TextEdit', 'FNAPPAEP': 'TextEdit', });
 lyr_AEP__1.set('fieldLabels', {'DIAMETRE': 'no label', 'MAT': 'no label', 'ID': 'inline label', });
-lyr_AEP__1.on('precompose', function(evt) {
+lyr_APP__2.set('fieldLabels', {'IDAPPAREIL': 'no label', 'FNAPPAEP': 'no label', });
+lyr_APP__2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
